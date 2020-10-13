@@ -18,3 +18,8 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+// This route cannot be found
+Route::fallback(function() {
+    return 'This route cannot be found. Sorry.';
+});

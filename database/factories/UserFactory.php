@@ -1,6 +1,8 @@
 <?php
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
+
+use App\Role;
 use App\User;
 use Illuminate\Support\Str;
 use Faker\Generator as Faker;
@@ -17,11 +19,14 @@ use Faker\Generator as Faker;
 */
 
 $factory->define(User::class, function (Faker $faker) {
+
+    $roleId = Role::where('name', '=', Config::get('constants.db.roles.customer'))->first();
     return [
-        'name' => $faker->name,
-        'email' => $faker->unique()->safeEmail,
+        'name' => $faker->firstName,
+        'role_id' => $roleId,
+        'email' => $faker->unique()->freeEmail,
         'email_verified_at' => now(),
-        'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
-        'remember_token' => Str::random(10),
+        'password' =>'$2y$10$BuFNdj6U.yf7zFXNLRmv7eg2fwjbUQbVD4TFwvefZEt/xN1yi6FE.',
+        'remember_token' => Str::random(10)
     ];
 });
