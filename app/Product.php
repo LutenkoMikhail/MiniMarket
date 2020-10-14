@@ -14,6 +14,11 @@ class Product extends Model
     {
         return $this->belongsToMany(\App\Order::class);
     }
+
+    public function category()
+    {
+        return $this->belongsTo(\App\Category::class);
+    }
     public function setImageAttribute($value)
     {
         if (is_string($value)) {

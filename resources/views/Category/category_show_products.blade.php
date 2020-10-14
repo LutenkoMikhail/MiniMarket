@@ -11,7 +11,7 @@
 
             <div class="col-md-8">
                 <div class="text-center">
-                    <div class="card-header">All Products</div>
+                    <div class="card-header">All Products.In the category : {{$nameCategory}} .</div>
                 </div>
                 <div class="card-body">
                     <div class="album py-5 bg-light">

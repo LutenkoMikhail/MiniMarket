@@ -7,6 +7,13 @@ use Illuminate\Database\Eloquent\Model;
 class Category extends Model
 {
     protected $fillable = [
-        'id',  'name', 'description'
+        'id', 'name', 'description'
     ];
+
+    public function product()
+    {
+        return $this->hasOne(\App\Product::class);
+
+    }
+
 }

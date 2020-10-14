@@ -11,10 +11,14 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
+//Route::get('/', function () {
+//    return view('welcome');
+//});
+Route::get('/', 'WelcomeController@index')->name('welcome.start');
+Route::get('/index', 'WelcomeController@index')->name('welcome.index');
+Route::get('/products', 'WelcomeController@allProducts')->name('products.index');
+Route::get('/categories', 'WelcomeController@allCategories')->name('categories.index');
+Route::get('category/{category}', 'CategoryController@index')->name('categories.product.show');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

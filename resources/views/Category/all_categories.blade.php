@@ -11,21 +11,20 @@
 
             <div class="col-md-8">
                 <div class="text-center">
-                    <div class="card-header">All Products</div>
+                    <div class="card-header">All Categories.</div>
                 </div>
                 <div class="card-body">
                     <div class="album py-5 bg-light">
                         <div class="row ">
-                            @each('product.show_products',$products,'product')
+                            @each('category.parts.category_show',$categories,'category')
                         </div>
                     </div>
                 </div>
 
                 <div class="col-md-8">
-                    {{$products->links()}}
+                    {{$categories->links()}}
                 </div>
             </div>
         </div>
     </div>
 @endsection
-
