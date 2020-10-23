@@ -12,7 +12,7 @@
             <hr>
             <p class="card-text">{{__($product->price) }}</p>
             <div class="d-flex flex-column justify-content-center align-items-start">
-                <small class="text-muted">Categories: </small>
+                <small class="text-muted">Category: </small>
                 <div class="btn-group align-self-end">
                     @if(!empty($product->category->get()))
                         @each('category.parts.category_show', $product->category->get(), 'category')

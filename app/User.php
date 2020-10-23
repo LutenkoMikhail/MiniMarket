@@ -5,6 +5,7 @@ namespace App;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Support\Facades\Config;
 
 class User extends Authenticatable
 {
@@ -43,5 +44,26 @@ class User extends Authenticatable
     public function orders()
     {
         return $this->hasMany(\App\Order::class);
+    }
+
+    /**
+     * @return bool
+     */
+    public function isAdmin()
+    {
+        $adminRole = \App\Role::where(
+            'name',
+            '=',
+            Config::get('constants.db.roles.admin')
+        )->first();
+        return $this->role_id === $adminRole->id;
+    }
+    public function instanceCartName()
+    {
+        $userName = [
+            $this->id,
+            $this->name
+        ];
+        return implode('_', $userName);
     }
 }

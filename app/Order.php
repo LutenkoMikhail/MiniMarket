@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Config;
 
 class Order extends Model
 {
@@ -23,5 +24,18 @@ class Order extends Model
     public function user()
     {
         return $this->hasOne(\App\User::class);
+    }
+
+    /**
+     * @return mixed
+     */
+    public function InProcess()
+    {
+        $InProcess = \App\Status::where(
+            'name',
+            '=',
+            Config::get('constants.db.order_statuses')[0]
+        )->first();
+        return $InProcess->id;
     }
 }

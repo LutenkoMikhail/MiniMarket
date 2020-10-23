@@ -12,7 +12,7 @@ class CategoryController extends Controller
     {
         $this->paginate = Config::get('constants.paginate.paginate_product_5');
         $products = $category->product()->paginate( $this->paginate);
-        return view('Category.category_show_products', [
+        return view('category.category_show_products', [
             'products' => $products,
             'nameCategory' => $category->name
         ]);

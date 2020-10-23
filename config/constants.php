@@ -2,8 +2,8 @@
 return [
     'db' => [
         'roles' => [
-            'admin' => 'Admin',
-            'customer' => 'Customer'
+            'admin' => 'admin',
+            'customer' => 'customer'
         ],
         'order_statuses' => [
             'In_process',
@@ -19,5 +19,9 @@ return [
         'paginate_product_100' => 100,
         'paginate_category_3' => 3,
         'paginate_category_10' => 10,
+    ],
+    'emails'=>[
+        'admin' => 'admin@gmail.com',
+        'new_order' => 'New purchase order has been generated.',
     ]
 ];

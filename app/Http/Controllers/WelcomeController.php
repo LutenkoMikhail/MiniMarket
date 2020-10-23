@@ -29,4 +29,16 @@ class WelcomeController extends Controller
         $categories = Category::with('product')->paginate($this->paginate);
         return view('category.all_categories', ['categories' => $categories]);
     }
+    /**
+     * @param Product$product
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function show(Product $product)
+    {
+        return view('product.parts.product', [
+            'product' => $product
+        ]);
+    }
+
+
 }
