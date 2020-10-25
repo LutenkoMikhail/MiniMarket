@@ -66,26 +66,30 @@
                             </li>
                             @endif
                             <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="{{ route('home') }}" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="{{ route('customer.home') }}" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }} <span class="caret"></span>
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                     @if (Auth::user()->isAdmin())
-                                        <a class="dropdown-item" href="{{ route('home') }}">
-                                            {{ __('admin DashBoard') }}
+                                        <a class="dropdown-item" href="{{ route('admin.home') }}">
+                                            {{ __('Admin DashBoard') }}
                                         </a>
-                                        <a class="dropdown-item" href="{{ route('home') }}">
+                                        <a class="dropdown-item" href="{{ route('admin.home') }}">
                                             {{ __('Create product') }}
                                         </a>
-                                        <a class="dropdown-item" href="{{ route('home') }}">
+                                        <a class="dropdown-item" href="{{ route('admin.home') }}">
                                             {{ __('Create category') }}
                                         </a>
-                                        <a class="dropdown-item" href="{{ route('home') }}">
+                                        <a class="dropdown-item" href="{{ route('admin.home') }}">
                                             {{ __('Orders') }}
                                         </a>
-                                        <a class="dropdown-item" href="{{ route('home') }}">
+                                        <a class="dropdown-item" href="{{ route('admin.home') }}">
                                             {{ __('Customers') }}
+                                        </a>
+                                    @else
+                                        <a class="dropdown-item" href="{{ route('customer.home') }}">
+                                            {{ __('My Orders') }}
                                         </a>
                                     @endif
                                     <a class="dropdown-item" href="{{ route('logout') }}"

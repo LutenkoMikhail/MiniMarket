@@ -9,4 +9,9 @@ class Status extends Model
     protected $fillable = [
         'id',  'name'
     ];
+
+    public function order()
+    {
+        return $this->hasMany(\App\Order::class);
+    }
 }

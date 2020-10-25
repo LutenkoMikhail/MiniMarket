@@ -19,6 +19,7 @@ return [
         'paginate_product_100' => 100,
         'paginate_category_3' => 3,
         'paginate_category_10' => 10,
+        'paginate_order_2' => 2,
     ],
     'emails'=>[
         'admin' => 'admin@gmail.com',

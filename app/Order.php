@@ -38,4 +38,12 @@ class Order extends Model
         )->first();
         return $InProcess->id;
     }
+    /**
+     * @return mixed
+     */
+    public function getStatus()
+    {
+        $statusOrder = \App\Status::where('id', $this->status_id)->get(['name']);
+        return $statusOrder[0]['name'];
+    }
 }

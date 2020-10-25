@@ -69,7 +69,7 @@ class CartController extends Controller
     public function createOrder(Request $request)
     {
         return view('cart.create', [
-            'customerName' => Auth::user()->name,
+            'customerName' => Auth::user()->name
         ]);
     }
 
