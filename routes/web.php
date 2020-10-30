@@ -42,23 +42,29 @@ Route::namespace('customer')->prefix('customer')->name('customer.')->middleware(
 Route::namespace('admin')->prefix('admin')->name('admin.')->middleware(['auth','admin'])
     ->group(function () {
         Route::get('/home', 'HomeController@index')->name('home');
+        Route::get('/categories/create', 'CategoryController@create')->name('categories.create');
+        Route::post('/categories/store', 'CategoryController@store')->name('categories.store');
+        Route::get('/categories/{category}/delete', 'CategoryController@destroy')->name('categories.delete');
+        Route::get('/categories/{category}/edit', 'CategoryController@edit')->name('categories.edit');
+        Route::post('/categories/{category}/update', 'CategoryController@update')->name('categories.update');
+
+        Route::get('/product/create', 'ProductController@create')->name('product.create');
+        Route::post('/product/store', 'ProductController@store')->name('product.store');
+        Route::get('/product/{product}/edit', 'ProductController@edit')->name('product.edit');
+        Route::post('/product/{product}/update', 'ProductController@update')->name('product.update');
 
 //
 //        Route::get('/', 'AdminController@index')->name('dashboard');
 //
 //        Route::get('/products', 'ProductController@index')->name('products');
-//        Route::get('/products/create', 'ProductController@create')->name('products.create');
-//        Route::post('/products/store', 'ProductController@store')->name('products.store');
-//        Route::get('/products/{product}/edit', 'ProductController@edit')->name('products.edit');
-//        Route::post('/products/{product}/update', 'ProductController@update')->name('products.update');
+
+
 //        Route::get('/products/{product}/delete', 'ProductController@destroy')->name('products.delete');
 //
 //        Route::get('/categories', 'CategoryController@index')->name('categories');
-//        Route::get('/categories/create', 'CategoryController@create')->name('categories.create');
-//        Route::post('/categories/store', 'CategoryController@store')->name('categories.store');
-//        Route::get('/categories/{category}/edit', 'CategoryController@edit')->name('categories.edit');
-//        Route::post('/categories/{category}/update', 'CategoryController@update')->name('categories.update');
-//        Route::get('/categories/{category}/delete', 'CategoryController@destroy')->name('categories.delete');
+
+
+
 //
 //        Route::get('/users', 'UserController@index')->name('users');
 //        Route::get('/users/create', 'UserController@create')->name('users.create');

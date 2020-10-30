@@ -12,7 +12,7 @@ protected $messenger;
      * Messenger constructor.
      * @param $messenger
      */
-    public function __construct($messenger)
+    public function __construct(IMessage $messenger)
     {
         $this->messenger = $messenger;
     }

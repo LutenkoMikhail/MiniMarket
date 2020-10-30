@@ -75,10 +75,10 @@
                                         <a class="dropdown-item" href="{{ route('admin.home') }}">
                                             {{ __('Admin DashBoard') }}
                                         </a>
-                                        <a class="dropdown-item" href="{{ route('admin.home') }}">
+                                        <a class="dropdown-item" href="{{ route('admin.product.create') }}">
                                             {{ __('Create product') }}
                                         </a>
-                                        <a class="dropdown-item" href="{{ route('admin.home') }}">
+                                        <a class="dropdown-item" href="{{ route('admin.categories.create') }}">
                                             {{ __('Create category') }}
                                         </a>
                                         <a class="dropdown-item" href="{{ route('admin.home') }}">

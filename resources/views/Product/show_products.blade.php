@@ -34,7 +34,7 @@
                     <hr>
                     <div class="text-center">
                         <div class="btn-group">
-                            <a href="{{ route('admin.home', $product->id) }}"
+                            <a href="{{ route('admin.product.edit', $product->id) }}"
                                class="btn btn-danger">{{ __('EDIT') }}</a>
                             <a href="{{ route('admin.home', $product->id) }}"
                                class="btn btn-dark">{{ __('DELETE') }}</a>

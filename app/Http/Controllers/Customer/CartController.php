@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Customer;
 
-use App\Http\Requests\OrderCreateRequest;
+use App\Http\Requests\OrderCreateUpdateRequest;
 use App\Product;
 use App\Services\Email;
 use App\Services\Messenger;
@@ -74,10 +74,10 @@ class CartController extends Controller
     }
 
     /**
-     * @param OrderCreateRequest $request
+     * @param OrderCreateUpdateRequest $request
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function store(OrderCreateRequest $request)
+    public function store(OrderCreateUpdateRequest $request)
     {
         $order = new \App\Order();
         $order->user_id = Auth::user()->id;
