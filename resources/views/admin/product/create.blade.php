@@ -22,7 +22,8 @@
                     <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('name') }}</label>
                     <div class="col-md-6">
                         <input id="name" type="text" class="form-control @error('name') is-invalid @enderror"
-                               name="name" value="{{ old('name') }}" minlength="5" maxlength="50"  required autocomplete="name" autofocus>
+                               name="name" value="{{ old('name') }}" minlength="5" maxlength="50" required
+                               autocomplete="name" autofocus>
                         @error('name')
                         <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -37,7 +38,7 @@
                     <div class="col-md-6">
                         <p><textarea rows="10" cols="45" name="description" id="description" cols="40" rows="5"
                                      class="form-control @error('description') is-invalid @enderror"
-                                     minlength="5" maxlength="50"  required placeholder="description"
+                                     minlength="5" maxlength="50" required placeholder="description"
                                      autofocus>{{ old('description') }}</textarea></p>
                         @error('description')
                         <span class="invalid-feedback" role="alert">
@@ -88,12 +89,15 @@
                                         <strong>{{ $message }}</strong>
                                     </span>
                 @enderror
-                <button type="submit" class="btn btn-primary">Create Product.</button>
-            {{--        </div>--}}
+                <div class="text-center">
+                    <button type="submit" class="btn btn-primary">Create Product.</button>
+                </div>
+            </form>
 
         </div>
+    </div>
 
-        </form>
+
 @endsection
 
 

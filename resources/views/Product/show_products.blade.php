@@ -36,8 +36,10 @@
                         <div class="btn-group">
                             <a href="{{ route('admin.product.edit', $product->id) }}"
                                class="btn btn-danger">{{ __('EDIT') }}</a>
-                            <a href="{{ route('admin.home', $product->id) }}"
+                            <a href="{{ route('admin.product.delete', $product->id) }}"
                                class="btn btn-dark">{{ __('DELETE') }}</a>
+                            <a href="{{ route('admin.product.create') }}"
+                               class="btn btn-success">{{ __('NEW') }}</a>
                         </div>
                     </div>
                 @endif

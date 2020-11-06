@@ -51,7 +51,7 @@ class ProductController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param \App\Category $category
+     * @param \App\Product $product
      */
     public function edit(Product $product)
     {
@@ -62,22 +62,22 @@ class ProductController extends Controller
                 'categories' => $categories
             ]);
     }
+
     /**
      * Update the specified resource in storage.
      *
      * @param ProductUpdateRequest $request
      * @param \App\Product $product
      */
-    public function update(ProductUpdateRequest  $request, Product $product)
+    public function update(ProductUpdateRequest $request, Product $product)
     {
+        $oldImage = $product->image;
 
-        Storage::delete($request->image);
-        dd($product);
         $pathImage = $request->image->store(
             "/images/products",
             'public'
         );
-        $status = 'Error saving  product !';
+
         $product->name = $request->name;
         $product->description = $request->description;
         $product->price = $request->price;
@@ -85,10 +85,29 @@ class ProductController extends Controller
         $product->category_id = $request->selectcategory;
 
         if ($product->save()) {
-            $status = 'Product updated !';
-            return redirect()->route('product.index')->with('status', $status);
+            Storage::delete($oldImage);
+            return redirect()->route('products.index')->with('status', 'Product updated !');
         }
-        return redirect()->back()->with('status', $status);
+        return redirect()->back()->with('status', 'Error saving  product !');
+    }
+
+    /**
+     * @param Product $product
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function destroy(Product $product)
+    {
+        if ($product && $product->order()->get()->count() !== 0) {
+            return redirect()->route('products.index')->with('status',
+                'There is no way to delete an item. Please remove the item from the order first!');
+        }
+        if ($product) {
+            Storage::delete($product->image);
+            $product->delete();
+            return redirect()->route('products.index')->with('status', 'Deletion was successful !');
+        } else {
+            return redirect()->route('products.index')->with('status', 'An error occurred while deleting !');
+        }
     }
 
 }

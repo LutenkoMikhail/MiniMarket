@@ -39,7 +39,7 @@ Route::namespace('customer')->prefix('customer')->name('customer.')->middleware(
         Route::post('cart/store/order', 'CartController@store')->name('cart.store.order');
     });
 
-Route::namespace('admin')->prefix('admin')->name('admin.')->middleware(['auth','admin'])
+Route::namespace('admin')->prefix('admin')->name('admin.')->middleware(['auth', 'admin'])
     ->group(function () {
         Route::get('/home', 'HomeController@index')->name('home');
         Route::get('/categories/create', 'CategoryController@create')->name('categories.create');
@@ -52,6 +52,7 @@ Route::namespace('admin')->prefix('admin')->name('admin.')->middleware(['auth','
         Route::post('/product/store', 'ProductController@store')->name('product.store');
         Route::get('/product/{product}/edit', 'ProductController@edit')->name('product.edit');
         Route::post('/product/{product}/update', 'ProductController@update')->name('product.update');
+        Route::get('/products/{product}/delete', 'ProductController@destroy')->name('product.delete');
 
 //
 //        Route::get('/', 'AdminController@index')->name('dashboard');
@@ -62,7 +63,6 @@ Route::namespace('admin')->prefix('admin')->name('admin.')->middleware(['auth','
 //        Route::get('/products/{product}/delete', 'ProductController@destroy')->name('products.delete');
 //
 //        Route::get('/categories', 'CategoryController@index')->name('categories');
-
 
 
 //
@@ -80,6 +80,6 @@ Route::namespace('admin')->prefix('admin')->name('admin.')->middleware(['auth','
     });
 
 // This route cannot be found
-Route::fallback(function() {
+Route::fallback(function () {
     return 'This route cannot be found. Sorry.';
 });
