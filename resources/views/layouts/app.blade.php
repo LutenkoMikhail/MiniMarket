@@ -81,7 +81,7 @@
                                         <a class="dropdown-item" href="{{ route('admin.categories.create') }}">
                                             {{ __('Create category') }}
                                         </a>
-                                        <a class="dropdown-item" href="{{ route('admin.home') }}">
+                                        <a class="dropdown-item" href="{{ route('admin.orders.index') }}">
                                             {{ __('Orders') }}
                                         </a>
                                         <a class="dropdown-item" href="{{ route('admin.home') }}">

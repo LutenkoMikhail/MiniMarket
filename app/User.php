@@ -41,9 +41,9 @@ class User extends Authenticatable
     {
         return $this - hasOne(\App\Role::class);
     }
-    public function orders()
+    public function order()
     {
-        return $this->hasMany(\App\Order::class);
+        return $this->hasOne(\App\Order::class);
     }
 
     /**

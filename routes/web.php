@@ -54,6 +54,12 @@ Route::namespace('admin')->prefix('admin')->name('admin.')->middleware(['auth', 
         Route::post('/product/{product}/update', 'ProductController@update')->name('product.update');
         Route::get('/products/{product}/delete', 'ProductController@destroy')->name('product.delete');
 
+        Route::get('/orders', 'OrderController@index')->name('orders.index');
+        Route::get('/order/{order}', 'OrderController@show')->name('order.show');
+        Route::get('/order/{order}/edit', 'OrderController@edit')->name('order.edit');
+        Route::post('/order/{order}/update', 'OrderController@update')->name('order.update');;
+        Route::get('/order/{order}/delete', 'OrderController@destroy')->name('order.delete');
+
 //
 //        Route::get('/', 'AdminController@index')->name('dashboard');
 //

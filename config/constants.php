@@ -20,6 +20,7 @@ return [
         'paginate_category_3' => 3,
         'paginate_category_10' => 10,
         'paginate_order_2' => 2,
+        'paginate_admin_order_5' => 5,
     ],
     'emails'=>[
         'admin' => 'admin@gmail.com',
