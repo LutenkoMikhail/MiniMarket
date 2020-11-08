@@ -37,10 +37,12 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
     public function role()
     {
-        return $this - hasOne(\App\Role::class);
+        return $this ->belongsTo(\App\Role::class);
     }
+
     public function order()
     {
         return $this->hasOne(\App\Order::class);
@@ -58,6 +60,7 @@ class User extends Authenticatable
         )->first();
         return $this->role_id === $adminRole->id;
     }
+
     public function instanceCartName()
     {
         $userName = [

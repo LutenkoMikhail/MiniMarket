@@ -60,6 +60,8 @@ Route::namespace('admin')->prefix('admin')->name('admin.')->middleware(['auth', 
         Route::post('/order/{order}/update', 'OrderController@update')->name('order.update');;
         Route::get('/order/{order}/delete', 'OrderController@destroy')->name('order.delete');
 
+        Route::get('/users', 'UserController@index')->name('users.index');
+        Route::get('/users/{user}', 'UserController@show')->name('users.show');
 //
 //        Route::get('/', 'AdminController@index')->name('dashboard');
 //

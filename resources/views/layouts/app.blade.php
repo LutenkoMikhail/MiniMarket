@@ -84,8 +84,8 @@
                                         <a class="dropdown-item" href="{{ route('admin.orders.index') }}">
                                             {{ __('Orders') }}
                                         </a>
-                                        <a class="dropdown-item" href="{{ route('admin.home') }}">
-                                            {{ __('Customers') }}
+                                        <a class="dropdown-item" href="{{ route('admin.users.index') }}">
+                                            {{ __('Users') }}
                                         </a>
                                     @else
                                         <a class="dropdown-item" href="{{ route('customer.home') }}">

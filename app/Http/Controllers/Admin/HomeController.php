@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers\Admin;
 
-use Illuminate\Http\Request;
+use App\Category;
+use App\Order;
+use App\Product;
+use App\User;
 use App\Http\Controllers\Controller;
 
 class HomeController extends Controller
@@ -14,6 +17,16 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('admin.home');
+        $users = User::all();
+        $orders = Order::all();
+        $products = Product::all();
+        $categories = Category::all();
+
+        return view('admin.home',[
+            'users'=>$users,
+            'orders'=>$orders,
+            'products'=>$products,
+            'categories'=>$categories,
+        ]);
     }
 }

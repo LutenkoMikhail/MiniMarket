@@ -14,13 +14,7 @@ class Product extends Model
     {
         return $this->belongsToMany(\App\Order::class,'order_products');
     }
-    public function gallery()
-    {
-        return $this->belongsToMany(\App\ProductGallery::class,
-            'product_galleries',
-            'product_id',
-            'image_path')->withTimestamps();
-    }
+
     public function category()
     {
         return $this->belongsTo(\App\Category::class);
