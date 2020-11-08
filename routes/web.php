@@ -22,6 +22,7 @@ Route::get('/products', 'WelcomeController@allProducts')->name('products.index')
 Route::get('products/{product}', 'WelcomeController@show')->name('product.show');
 Route::get('/categories', 'WelcomeController@allCategories')->name('categories.index');
 Route::get('category/{category}', 'CategoryController@index')->name('categories.product.show');
+
 Auth::routes();
 
 //Route::get('/home', 'HomeController@index')->name('home');
