@@ -16,7 +16,6 @@ class RolesTableSeeder extends Seeder
         $roles = Config::get('constants.db.roles');
         foreach ($roles as $key => $role) {
             Role::create(['name' => $role]);
-
         }
     }
 }

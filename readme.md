@@ -28,7 +28,10 @@ php artisan migrate --seed ;
 php artisan optimize:clear(при необходимости);
 npm install (при необходимости);
 Переименовать файл .env.example в файл .env и настроить подключение к базе данных и пр;
-Дамп базы данный minimarket.sql;
+
+Дамп базы данный minimarket.rar;
+Архив папки \storage\app\public\images\products\ в файле app.rar
+Емайл сохраняется в папке \temp\email\ на сервере
 
 Стартовая страница:
 public\index.php

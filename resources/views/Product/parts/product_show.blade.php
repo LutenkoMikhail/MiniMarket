@@ -4,7 +4,6 @@
             <img src="{{ Storage::url($product->image) }}" height="250" width="350" class="card-img-top"
                  style="max-width: 45%; margin: 0 auto; display: block;">
         @endif
-
         <div class="card-body">
             <h5 class="card-title">{{__($product->name) }}</h5>
             <hr>

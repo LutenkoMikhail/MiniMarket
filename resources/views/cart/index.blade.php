@@ -12,7 +12,7 @@
         </div>
         <div class="row justify-content-center">
             <div class="col-md-12">
-                <h1 class="text-center"> {{ __ ('Cart Page.') }} Customer :  {{ Auth::user()->name }}</h1>
+                <h1 class="text-center"> {{ __ ('Cart Page.') }} Customer : {{ Auth::user()->name }}</h1>
             </div>
 
             <div class="col-md-12">

@@ -17,7 +17,12 @@ protected $messenger;
         $this->messenger = $messenger;
     }
 
-    public function send($message)
+    /**
+     * @param $message
+     * @return mixed
+     */
+
+    public function send( $message)
     {
         return $this->messenger->send($message);
     }

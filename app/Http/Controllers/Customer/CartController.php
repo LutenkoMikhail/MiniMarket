@@ -98,7 +98,7 @@ class CartController extends Controller
             Cart::instance('cart')->destroy();
 
             $messenger = new Messenger(new Email());
-            $messenger->send("A new order has been issued. Its number is {$order->id}. The customer is \" ".Auth::user()->name." \" .");
+            $messenger->send("A new order has been issued. Its number is {$order->id}. The customer is \" " . Auth::user()->name . " \" .");
 
             return redirect()->route('customer.home')->with("status", "Order number  \"{$order->id}\" is accepted for processing. ");
         }

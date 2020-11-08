@@ -11,11 +11,17 @@ class Order extends Model
         'id', 'status_id', 'name', 'surname', 'phone', 'email'
     ];
 
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     */
     public function status()
     {
         return $this->hasOne(\App\Status::class);
     }
 
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
     public function product()
     {
         return $this->belongsToMany(\App\Product::class,
@@ -26,6 +32,9 @@ class Order extends Model
             ->withTimestamps();
     }
 
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
     public function user()
     {
         return $this->belongsTo(\App\User::class);
@@ -53,11 +62,14 @@ class Order extends Model
         return $statusOrder[0]['name'];
     }
 
+    /**
+     * @return float|int
+     */
     public function totalPrice()
     {
         $result = 0;
         foreach ($this->product as $product) {
-            $result +=($product->pivot->product_price * $product->pivot->product_count);
+            $result += ($product->pivot->product_price * $product->pivot->product_count);
         }
         return $result;
     }

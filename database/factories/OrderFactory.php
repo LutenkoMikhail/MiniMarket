@@ -17,8 +17,8 @@ $factory->define(Order::class, function (Faker $faker) {
         'user_id' => $user[0]['id'],
         'status_id' => $status_id[0]['id'],
         'name' => $user[0]['name'],
-        'surname'=> $faker->lastName,
-        'phone'=> FakerPhone::tollFreePhoneNumber(),
-        'email'=> $user[0]['email'],
+        'surname' => $faker->lastName,
+        'phone' => FakerPhone::tollFreePhoneNumber(),
+        'email' => $user[0]['email'],
     ];
 });

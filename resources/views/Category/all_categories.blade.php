@@ -13,17 +13,17 @@
                     <div class="card-header">All Categories.</div>
                 </div>
                 @if (count($categories) > 0)
-                <div class="card-body">
-                    <div class="album py-5 bg-light">
-                        <div class="row ">
-                            @each('category.parts.category_show',$categories,'category')
+                    <div class="card-body">
+                        <div class="album py-5 bg-light">
+                            <div class="row ">
+                                @each('category.parts.category_show',$categories,'category')
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="col-md-8">
-                    {{$categories->links()}}
-                </div>
+                    <div class="col-md-8">
+                        {{$categories->links()}}
+                    </div>
                 @else
                     <div class="text-center">
                         <h2>

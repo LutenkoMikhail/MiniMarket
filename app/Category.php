@@ -10,10 +10,12 @@ class Category extends Model
         'id', 'name', 'description'
     ];
 
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     */
     public function product()
     {
         return $this->hasOne(\App\Product::class);
-
     }
 
 }

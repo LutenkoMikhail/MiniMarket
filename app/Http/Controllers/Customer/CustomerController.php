@@ -3,12 +3,14 @@
 namespace App\Http\Controllers\Customer;
 
 use App\Product;
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Config;
 
 class CustomerController extends Controller
 {
+    /**
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function index()
     {
         $this->paginate = Config::get('constants.paginate.paginate_product_5');

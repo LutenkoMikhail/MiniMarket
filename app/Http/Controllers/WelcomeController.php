@@ -8,7 +8,9 @@ use Illuminate\Support\Facades\Config;
 
 class WelcomeController extends Controller
 {
-
+    /**
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function index()
     {
         $this->paginate = Config::get('constants.paginate.paginate_product_2');
@@ -16,6 +18,9 @@ class WelcomeController extends Controller
         return view('welcome', ['products' => $products]);
     }
 
+    /**
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function allProducts()
     {
         $this->paginate = Config::get('constants.paginate.paginate_product_5');
@@ -23,14 +28,18 @@ class WelcomeController extends Controller
         return view('product.all_products', ['products' => $products]);
     }
 
+    /**
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function allCategories()
     {
         $this->paginate = Config::get('constants.paginate.paginate_category_3');
         $categories = Category::with('product')->paginate($this->paginate);
         return view('category.all_categories', ['categories' => $categories]);
     }
+
     /**
-     * @param Product$product
+     * @param Product $product
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function show(Product $product)
@@ -39,6 +48,4 @@ class WelcomeController extends Controller
             'product' => $product
         ]);
     }
-
-
 }

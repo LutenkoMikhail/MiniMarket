@@ -1,20 +1,5 @@
 <?php
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
-
-//Route::get('/', function () {
-//    return view('welcome');
-//});
-
 
 Route::get('/', 'WelcomeController@index')->name('welcome.start');
 Route::get('/index', 'WelcomeController@index')->name('welcome.index');
@@ -25,7 +10,6 @@ Route::get('category/{category}', 'CategoryController@index')->name('categories.
 
 Auth::routes();
 
-//Route::get('/home', 'HomeController@index')->name('home');
 
 Route::namespace('customer')->prefix('customer')->name('customer.')->middleware(['auth'])
     ->group(function () {
@@ -63,28 +47,6 @@ Route::namespace('admin')->prefix('admin')->name('admin.')->middleware(['auth', 
 
         Route::get('/users', 'UserController@index')->name('users.index');
         Route::get('/users/{user}', 'UserController@show')->name('users.show');
-//
-//        Route::get('/', 'AdminController@index')->name('dashboard');
-//
-//        Route::get('/products', 'ProductController@index')->name('products');
-
-
-//        Route::get('/products/{product}/delete', 'ProductController@destroy')->name('products.delete');
-//
-//        Route::get('/categories', 'CategoryController@index')->name('categories');
-
-
-//
-//        Route::get('/users', 'UserController@index')->name('users');
-//        Route::get('/users/create', 'UserController@create')->name('users.create');
-//        Route::post('/users/store', 'UserController@store')->name('users.store');
-//        Route::get('/users/{user}', 'UserController@show')->name('users.show');
-//        Route::get('/users/{user}/edit', 'UserController@edit')->name('users.edit');
-//        Route::post('/users/{user}/update', 'UserController@update')->name('users.update');
-//        Route::get('/users/{user}/delete', 'UserController@destroy')->name('users.delete');
-//
-//        Route::get('/orders', 'OrderController@index')->name('orders');
-//        Route::get('/orders/create', 'OrderController@create')->name('orders.create');
 
     });
 

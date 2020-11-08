@@ -8,16 +8,16 @@
                 <h3 class="text-center"> {{ __ ('All Orders.') }} </h3>
             </div>
             @if (count($orders) > 0)
-            <div class="col-md-12">
-                <div class="album py-12 bg-light">
-                    <div class="container">
-                        <div class="row ">
-                            @each('admin.order.parts.order_view',$orders,'order')
+                <div class="col-md-12">
+                    <div class="album py-12 bg-light">
+                        <div class="container">
+                            <div class="row ">
+                                @each('admin.order.parts.order_view',$orders,'order')
 
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
         </div>
         <div class="col-md-8">
             {{$orders->links()}}
@@ -30,7 +30,5 @@
             </div>
         @endif
     </div>
-
-
 @endsection
 

@@ -65,6 +65,7 @@ class CategoryController extends Controller
         }
         return redirect()->back()->with('status', $status);
     }
+
     /**
      * @param Category $category
      * @return \Illuminate\Http\RedirectResponse

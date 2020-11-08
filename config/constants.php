@@ -23,7 +23,7 @@ return [
         'paginate_admin_order_5' => 5,
         'paginate_admin_user_5' => 5,
     ],
-    'emails'=>[
+    'emails' => [
         'admin' => 'admin@gmail.com',
         'new_order' => 'New purchase order has been generated.',
     ]

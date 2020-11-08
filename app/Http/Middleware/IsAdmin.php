@@ -22,7 +22,6 @@ class IsAdmin
         if ($request->user()->role_id !== $adminRole->id) {
             return redirect('/');
         }
-
         return $next($request);
     }
 }

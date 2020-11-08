@@ -17,7 +17,6 @@ class StatusesTableSeeder extends Seeder
             $statuses = Config::get('constants.db.order_statuses');
             foreach ($statuses as $key => $status) {
                 Status::create(['name' => $status]);
-
             }
 
         }
