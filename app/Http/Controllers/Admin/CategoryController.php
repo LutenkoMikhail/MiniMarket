@@ -29,9 +29,9 @@ class CategoryController extends Controller
         $category->description = $request->description;
 
         if ($category->save()) {
-            return redirect()->route('categories.index')->with("status", "A product category named  \"{$category->name}\"  has been created. ");
+            return $this->redirectRoute('categories.index', "status", "A product category named  \"{$category->name}\"  has been created. ");
         }
-        return redirect()->back();
+        return $this->redirectBack();
     }
 
 
@@ -63,7 +63,7 @@ class CategoryController extends Controller
             $status = 'Category updated !';
             return redirect()->route('categories.index')->with('status', $status);
         }
-        return redirect()->back()->with('status', $status);
+        $this->redirectBackWith('status', $status);
     }
 
     /**
@@ -73,14 +73,19 @@ class CategoryController extends Controller
     public function destroy(Category $category)
     {
         if ($category && $category->product()->get()->count() !== 0) {
-            return redirect()->route('categories.index')->with('status',
+            return $this->redirectRoute('categories.index',
+                'status',
                 'There is no way to delete a category. Please delete products with this category first !');
         }
         if ($category) {
             $category->delete();
-            return redirect()->route('categories.index')->with('status', 'Deletion was successful !');
+            return $this->redirectRoute('categories.index',
+                'status',
+                'Deletion was successful !');
         } else {
-            return redirect()->route('categories.index')->with('status', 'An error occurred while deleting !');
+            return $this->redirectRoute('categories.index',
+                'status',
+                'An error occurred while deleting !');
         }
     }
 }

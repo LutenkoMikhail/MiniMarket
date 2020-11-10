@@ -12,4 +12,20 @@ class Controller extends BaseController
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
     protected $paginate;
+
+    protected function redirectRoute($routeName, $statusName, $status)
+    {
+        return redirect()->route($routeName)->with($statusName, $status);
+    }
+
+
+    protected function redirectBack()
+    {
+        return redirect()->back();
+    }
+
+    protected function redirectBackWith($statusName, $status)
+    {
+        return redirect()->back()->with($statusName, $status);
+    }
 }

@@ -15,7 +15,7 @@ class OrderController extends Controller
     public function index()
     {
         $this->paginate = Config::get('constants.paginate.paginate_admin_order_5');
-        $orders = Order::with('user')->paginate($this->paginate);
+        $orders = Order::with('user')->latest()->paginate($this->paginate);
         return view('admin.order.index', [
             'orders' => $orders
         ]);
