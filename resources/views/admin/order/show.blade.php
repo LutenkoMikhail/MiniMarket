@@ -1,5 +1,5 @@
 @extends('layouts.app')
-
+@section('title','Admin.Order.')
 @section('content')
     <div class="container">
         <div class="col-md-12">
@@ -9,11 +9,13 @@
                 </div>
             @endif
         </div>
+        <div class="card-header">
+            <h1 class="text-center"> Number Order:{{__($order->id) }} </h1>
+        </div>
         <div class="row justify-content-center">
+
             <div class="col-md-12">
                 <h1 class="text-center"> Order creator:{{$order->user()->value('name')}} </h1>
-                <hr>
-                <h1 class="text-center"> Number Order:{{__($order->id) }} </h1>
                 <hr>
                 <h1 class="text-center"> Name:{{$order->name}} </h1>
                 <h1 class="text-center"> SurName:{{$order->surname}} </h1>

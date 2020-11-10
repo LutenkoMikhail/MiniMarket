@@ -1,5 +1,5 @@
 @extends('layouts.app')
-
+@section('title','Admin.Create Category.')
 @section('content')
     <div class="container">
         <div class="col-md-12">

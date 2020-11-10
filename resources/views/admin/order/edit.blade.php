@@ -1,9 +1,18 @@
 @extends('layouts.app')
-
+@section('title','Admin.Edit Order.')
 @section('content')
 
     <div class="container">
-
+        <div class="col-md-12">
+            @if (session('status'))
+                <div class="alert alert-success" role="alert">
+                    {{ session('status') }}
+                </div>
+            @endif
+        </div>
+        <div class="card-header">
+            <h3 class="text-center"> {{ __ ('Edit Order.') }} </h3>
+        </div>
         <form action="{{route ('admin.order.update',$order->id)}}" method="POST">
             @csrf
             <div class="row justify-content-center">

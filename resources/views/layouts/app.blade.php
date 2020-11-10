@@ -7,7 +7,8 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Minimarket') }}</title>
+{{--    <title>{{ config('app.name', 'Minimarket') }}</title>--}}
+    <title>{{ config('app.name', 'Minimarket') }} :  @yield('title')</title>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
@@ -36,11 +37,11 @@
                 <!-- Left Side Of Navbar -->
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item active">
-                        <a class="nav-link" href="{{route('products.index')}}">Products <span
+                        <a class="nav-link" href="{{route('products.index')}}">Products  [ {{$countProducts}} ]<span
                                 class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item active">
-                        <a class="nav-link" href="{{route('categories.index')}}">Categories <span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="{{route('categories.index')}}">Categories [ {{$countCategories}} ]<span class="sr-only">(current)</span></a>
                     </li>
                 </ul>
 

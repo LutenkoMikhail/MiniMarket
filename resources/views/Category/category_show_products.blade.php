@@ -1,5 +1,5 @@
 @extends('layouts.app')
-
+@section('title','All Products.In the category.')
 @section('content')
     <div class="container">
         @if (session('status'))

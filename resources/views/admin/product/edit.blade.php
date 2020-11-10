@@ -1,5 +1,5 @@
 @extends('layouts.app')
-
+@section('title','Admin.Edit Product.')
 @section('content')
     <div class="container">
         <div class="col-md-12">
@@ -9,15 +9,15 @@
                 </div>
             @endif
         </div>
-
-        <div class="row justify-content-center">
-            <div class="col-md-12">
+        <div class="col-md-12">
+            <div class="card-header">
                 <h3 class="text-center"> {{ __ ('Edit Product.') }} </h3>
             </div>
+        </div>
+        <div class="row justify-content-center">
             <form action="{{route ('admin.product.update',$product->id)}}" method="post"
                   enctype="multipart/form-data">
                 @csrf
-
                 <div class="form-group row">
                     <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('name') }}</label>
                     <div class="col-md-6">

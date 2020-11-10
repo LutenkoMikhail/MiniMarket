@@ -1,11 +1,11 @@
 @extends('layouts.app')
-
+@section('title','Admin.All Users.')
 @section('content')
 
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-12">
-                <h3 class="text-center">{{ __('All Users') }}</h3>
+                <h3 class="text-center">{{ __('All Users.') }}</h3>
             </div>
             <div class="col-md-12">
                 <div class="album py-5 bg-light">
