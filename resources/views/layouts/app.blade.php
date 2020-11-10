@@ -70,7 +70,7 @@
                             </li>
                         @endif
                         <li class="nav-item dropdown">
-                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="{{ route('customer.home') }}"
+                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#"
                                role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                 {{ Auth::user()->name }} <span class="caret"></span>
                             </a>
@@ -93,8 +93,11 @@
                                         {{ __('Users') }}
                                     </a>
                                 @else
-                                    <a class="dropdown-item" href="{{ route('customer.home') }}">
-                                        {{ __('My Orders') }}
+                                    <a class="dropdown-item" href="{{ route('customer.orders') }}">
+                                        {{ __('Orders') }}
+                                    </a>
+                                    <a class="dropdown-item" href="{{ route('customer.account') }}">
+                                        {{ __('Account') }}
                                     </a>
                                 @endif
                                 <a class="dropdown-item" href="{{ route('logout') }}"

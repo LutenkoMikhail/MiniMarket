@@ -14,7 +14,8 @@ Auth::routes();
 Route::namespace('customer')->prefix('customer')->name('customer.')->middleware(['auth'])
     ->group(function () {
         Route::get('/', 'CustomerController@index')->name('index');
-        Route::get('/home', 'HomeController@index')->name('home');
+        Route::get('/orders', 'CustomerController@AllOrders')->name('orders');
+        Route::get('/account', 'CustomerController@Account')->name('account');
 
         Route::get('cart', 'CartController@index')->name('cart');
         Route::post('cart/{product}/add', 'CartController@AddProductToCart')->name('cart.add');
